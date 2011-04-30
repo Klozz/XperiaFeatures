@@ -1,8 +1,9 @@
-This is a module for x8/x10mini/x10minipro for undervolting the
-MSM7227 CPU. This is also an extraction from x8overclock for users
-who want stability.
+This is a module for undervolting the X10 QSD8250 CPU. 
+It changes the voltage levels of the available scalling frequencies
+in order to save battery.
 
-It can be applied to any kernel with CONFIG_KALLSYMS.
+It can be applied to any kernel with CONFIG_KALLSYMS but has been tested
+with SE Eclair Kernel 2.1.A.0.435
 
 To make it work with other kernel, just look up kallsyms_lookup_name
 offset and change it in the header.
