@@ -58,10 +58,10 @@ static int __init x10uv_init(void)
 	standard_clocks = (void*) kallsyms_lookup_name_dx("acpu_freq_tbl_998");
 	
 	// do some undervoltage
-	standard_clocks[2].vdd = 900;		// a little bit under voltage for 245760 from 1000
-	standard_clocks[3].vdd = 900;		// a little bit under voltage for 384000 from 1000
-	standard_clocks[8].vdd = 950;		// a little bit under voltage for 576000 from 1050
-	standard_clocks[13].vdd = 1050;		// a little bit under voltage for 768000 from 1150
+	standard_clocks[2].vdd = 950;		// a little bit under voltage for 245760 from 1000
+	standard_clocks[3].vdd = 950;		// a little bit under voltage for 384000 from 1000
+	standard_clocks[8].vdd = 1000;		// a little bit under voltage for 576000 from 1050
+	standard_clocks[13].vdd = 1100;		// a little bit under voltage for 768000 from 1150
 	standard_clocks[19].vdd = 1300;		// a little bit under voltage for 998400 (max) from 1300
 	
 	/*standard_clocks[2].vdd = 900;		// a little bit under voltage for 245760
