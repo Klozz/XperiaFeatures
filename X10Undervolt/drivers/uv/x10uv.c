@@ -12,8 +12,8 @@
 #include <linux/kernel.h>	
 
 // defines
-#define DX_MODULE_NAME 			"x10uv"
-#define DX_PROCFS_NAME 			"x10uv"
+#define MODULE_NAME 			"x10uv"
+#define MODULE_VER			"v002b"
 #define DXDBG(x)					
 #define X10
 
@@ -49,7 +49,7 @@ static kallsyms_lookup_name_type kallsyms_lookup_name_dx;
 // init module
 static int __init x10uv_init(void)
 {
-	printk(KERN_INFO DX_MODULE_NAME ": Module loaded. Built for target device: " DEVICE_NAME "\n");
+	printk(KERN_INFO MODULE_NAME ": module " MODULE_VER " loaded. Built for target device: " DEVICE_NAME "\n");
 	
 	// our 'GetProcAddress' :D
 	kallsyms_lookup_name_dx = (void*) OFS_KALLSYMS_LOOKUP_NAME;
@@ -58,10 +58,10 @@ static int __init x10uv_init(void)
 	standard_clocks = (void*) kallsyms_lookup_name_dx("acpu_freq_tbl_998");
 	
 	// do some undervoltage
-	standard_clocks[2].vdd = 950;		// a little bit under voltage for 245760 from 1000
-	standard_clocks[3].vdd = 950;		// a little bit under voltage for 384000 from 1000
-	standard_clocks[8].vdd = 1000;		// a little bit under voltage for 576000 from 1050
-	standard_clocks[13].vdd = 1100;		// a little bit under voltage for 768000 from 1150
+	standard_clocks[2].vdd = 900;		// a little bit under voltage for 245760 from 1000
+	standard_clocks[3].vdd = 900;		// a little bit under voltage for 384000 from 1000
+	standard_clocks[8].vdd = 950;		// a little bit under voltage for 576000 from 1050
+	standard_clocks[13].vdd = 1050;		// a little bit under voltage for 768000 from 1150
 	standard_clocks[19].vdd = 1300;		// a little bit under voltage for 998400 (max) from 1300
 	
 	/*standard_clocks[2].vdd = 900;		// a little bit under voltage for 245760
@@ -70,7 +70,7 @@ static int __init x10uv_init(void)
 	standard_clocks[13].vdd = 1050;		// a little bit under voltage for 768000
 	standard_clocks[19].vdd = 1300;		// same voltage for 998400 (max)
 	*/
-	printk(KERN_INFO DX_MODULE_NAME ": patching done. enjoy better battery life.\n");
+	printk(KERN_INFO MODULE_NAME ": patching done. enjoy better battery life.\n");
 	return 0;
 }
 
@@ -78,7 +78,13 @@ static int __init x10uv_init(void)
 // exit module - will most likely not be called
 static void __exit x10uv_exit(void)
 {
-	printk(KERN_INFO DX_MODULE_NAME ": module unloaded\n");
+	// restore voltages to original
+	standard_clocks[2].vdd = 1000;		// a little bit under voltage for 245760 from 1000
+	standard_clocks[3].vdd = 1000;		// a little bit under voltage for 384000 from 1000
+	standard_clocks[8].vdd = 1050;		// a little bit under voltage for 576000 from 1050
+	standard_clocks[13].vdd = 1150;		// a little bit under voltage for 768000 from 1150
+	standard_clocks[19].vdd = 1300;		// a little bit under voltage for 998400 (max) from 1300
+	printk(KERN_INFO MODULE_NAME ": module unloaded\n");
 }
 
 module_init(x10uv_init);
