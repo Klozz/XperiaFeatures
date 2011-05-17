@@ -1,0 +1,7 @@
+This is a module for undervolting the x10mini/x10minipro which uses the MSM7227 CPU. 
+This is also an extraction from x10minioverclock for users who want stability.
+
+It can be applied to any kernel with CONFIG_KALLSYMS.
+
+To make it work with other kernel, just look up kallsyms_lookup_name
+offset and change it in the header.
