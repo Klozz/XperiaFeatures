@@ -109,4 +109,4 @@ obj-$(CONFIG_SSB)		+= ssb/
 obj-$(CONFIG_VIRTIO)		+= virtio/
 obj-$(CONFIG_STAGING)		+= staging/
 obj-y				+= platform/
-obj-$(CONFIG_X8_OVERCLOCK)			+= oc/
+obj-$(CONFIG_X10_OVERCLOCK)			+= oc/

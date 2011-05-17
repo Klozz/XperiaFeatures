@@ -1,7 +1,7 @@
 #
-# Makefile for the x8 overclock module.
+# Makefile for the x10 overclock module.
 #
 
 # Each configuration option enables a list of files.
 
-obj-$(CONFIG_X8_OVERCLOCK)	+= x8oc.o
+obj-$(CONFIG_X10_OVERCLOCK)	+= x10oc.o

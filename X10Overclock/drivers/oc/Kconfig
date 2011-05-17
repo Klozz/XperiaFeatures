@@ -1,14 +1,14 @@
 #
-# X8OC module configuration
+# X10OC module configuration
 #
 
-config X8_OVERCLOCK
-	tristate "X8 overclock"
+config X10_OVERCLOCK
+	tristate "X10 overclock"
 	help
-	  Say Y here if you want to build an overclock module for X8
+	  Say Y here if you want to build an overclock module for X10
 
 	  If unsure, say N.
 
 	  To compile this module, choose M here: the
-	  module will be called x8oc.
+	  module will be called x10oc.
 
