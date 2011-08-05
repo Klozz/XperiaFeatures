@@ -1398,7 +1398,7 @@ source "drivers/uio/Kconfig"
 
 source "drivers/staging/Kconfig"
 
-source "drivers/uv/Kconfig"
+source "drivers/uv_x10/Kconfig"
 
 endmenu
 

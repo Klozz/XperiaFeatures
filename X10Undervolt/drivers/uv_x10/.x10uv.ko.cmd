@@ -1,0 +1,1 @@
+cmd_drivers/uv_x10/x10uv.ko := /opt/android-ndk-r4b/build/prebuilt/linux-x86/arm-eabi-4.4.0/bin/arm-eabi-ld -EL -r   --build-id -o drivers/uv_x10/x10uv.ko drivers/uv_x10/x10uv.o drivers/uv_x10/x10uv.mod.o

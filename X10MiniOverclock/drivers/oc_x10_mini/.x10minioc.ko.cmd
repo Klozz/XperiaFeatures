@@ -1,0 +1,1 @@
+cmd_drivers/oc_x10_mini/x10minioc.ko := /opt/android-ndk-r4b/build/prebuilt/linux-x86/arm-eabi-4.4.0/bin/arm-eabi-ld -EL -r   --build-id -o drivers/oc_x10_mini/x10minioc.ko drivers/oc_x10_mini/x10minioc.o drivers/oc_x10_mini/x10minioc.mod.o

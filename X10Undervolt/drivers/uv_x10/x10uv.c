@@ -13,14 +13,16 @@
 
 // defines
 #define MODULE_NAME 			"x10uv"
-#define MODULE_VER			"v002b"
+//#define MODULE_VER			"v002b"
+#define MODULE_VER			"v002b-kernel-011"
 #define DXDBG(x)					
 #define X10
 
 // patch offsets
 #ifdef X10
 #define DEVICE_NAME				"X10"
-#define OFS_KALLSYMS_LOOKUP_NAME	0xC0094100			// kallsyms_lookup_name
+//#define OFS_KALLSYMS_LOOKUP_NAME	0xC0094100			// kallsyms_lookup_name
+#define OFS_KALLSYMS_LOOKUP_NAME	0xC0090B68			// kallsyms_lookup_name
 #endif
 
 // struct definition
